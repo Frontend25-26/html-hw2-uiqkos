@@ -1,0 +1,16 @@
+
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+
+/blob-report/
+/playwright/.cache/
+node_modules/
+dist/
+playwright-report/
+test-results/
+*.log
+.vscode/
+.idea/

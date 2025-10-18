@@ -1,11 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Ame-chan</title>
 </head>
 <body>
+    <div class="scroll-container">
+        <div class="background-layer">
+            <img src="./imgs/ame_vertical_lines.png" alt="Background">
+        </div>
 
+        <div class="dark-overlay"></div>
+
+        <div class="content-container">
+            <main>
+                <figure>
+                    <div class="image-wrapper">
+                        <img src="./imgs/noame.png" alt="Аме-чан">
+                        <img src="./imgs/nso-needy-streamer-overload.gif" alt="Аме-чан анимация" class="hover-image">
+                    </div>
+                    <figcaption>
+                        <blockquote>«Я подарю вам лучший стрим!»</blockquote>
+                    </figcaption>
+                </figure>
+
+                <div class="content">
+                    <section>
+                        <h1>Эбаут</h1>
+                        <p>
+                            <mark>Аме‑чан</mark> — девушка с амбициями стать нет‑идолом.
+                            Игра известна как <abbr title="Needy Streamer Overload">NSO</abbr>.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h1>Характеристики</h1>
+                        <ul>
+                            <li>
+                                <span>Навык стриминга</span>
+                                <div class="progress-bar" data-value="10" data-max="100">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Популярность</span>
+                                <div class="progress-bar" data-value="60" data-max="100">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Обаяние</span>
+                                <div class="progress-bar" data-value="85" data-max="100">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Стресс</span>
+                                <div class="progress-bar" data-value="99" data-max="100">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Ментальная тьма</span>
+                                <div class="progress-bar" data-value="999" data-max="100">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1>Статы</h1>
+                        <table>
+                            <tr>
+                                <td>Частота стримов</td>
+                                <td>5-7 раз в неделю</td>
+                            </tr>
+                            <tr>
+                                <td>Средняя длительность</td>
+                                <td>3-4 часа</td>
+                            </tr>
+                            <tr>
+                                <td>Подписчики</td>
+                                <td>~250K</td>
+                            </tr>
+                        </table>
+                    </section>  
+                    
+                    <section>
+                        <h1>Стафф</h1>
+                        <p>Рекомендуемая доза: -1 стресс, -1 тьма. Все препараты занимают 2 временных слота.</p>
+
+                        <article class="staff-item" data-staff="depaz">
+                            <img src="./imgs/staff/depaz.gif" alt="Depaz">
+                            <div>
+                                <h3>Depaz</h3>
+                                <p>Доступен с самого начала игры.</p>
+                                <details>
+                                    <summary>Эффекты передозировки</summary>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Стресс</th>
+                                                <th>Тьма</th>
+                                                <th>Влияние</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>&lt;20 Тьма</td>
+                                                <td>-12 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>20-39 Тьма</td>
+                                                <td>-4 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>40-59 Тьма</td>
+                                                <td>-2 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>60+ Тьма</td>
+                                                <td>-1 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </details>
+                            </div>
+                        </article>
+
+                        <article class="staff-item" data-staff="dylsem">
+                            <img src="./imgs/staff/dylsem.gif" alt="Dylsem">
+                            <div>
+                                <h3>Dylsem</h3>
+                                <p>Открывается при 20 Ментальной Тьмы.</p>
+                                <details>
+                                    <summary>Эффекты передозировки</summary>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Стресс</th>
+                                                <th>Тьма</th>
+                                                <th>Влияние</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>&lt;40 Тьма</td>
+                                                <td>-12 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>40-59 Тьма</td>
+                                                <td>-4 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>60+ Тьма</td>
+                                                <td>-2 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </details>
+                            </div>
+                        </article>
+
+                        <article class="staff-item" data-staff="embian">
+                            <img src="./imgs/staff/embian.gif" alt="Embian">
+                            <div>
+                                <h3>Embian</h3>
+                                <p>Открывается при 40 Ментальной Тьмы. Нет обычной дозы — любое потребление дает эффекты
+                                    передозировки.</p>
+                                <details>
+                                    <summary>Эффекты передозировки</summary>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Стресс</th>
+                                                <th>Тьма</th>
+                                                <th>Влияние</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>&lt;60 Тьма</td>
+                                                <td>-12 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>60+ Тьма</td>
+                                                <td>-4 / +6</td>
+                                                <td>+1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </details>
+                            </div>
+                        </article>
+
+                        <article class="staff-item" data-staff="magic grass">
+                            <img src="./imgs/staff/magic grass.gif" alt="Magic Grass">
+                            <div>
+                                <h3>Magic Grass</h3>
+                                <p>Открывается при 60 Ментальной Тьмы. Нет обычной дозы — любое потребление дает усиленные
+                                    эффекты.</p>
+                                <details>
+                                    <summary>Эффекты приема</summary>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Стресс</th>
+                                                <th>Тьма</th>
+                                                <th>Влияние</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>&lt;80 Тьма</td>
+                                                <td>-18 / +8</td>
+                                                <td>+1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>80+ Тьма</td>
+                                                <td>-12 / +8</td>
+                                                <td>+1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </details>
+                            </div>
+                        </article>
+
+                        <article class="staff-item" data-staff="magic paper">
+                            <img src="./imgs/staff/magic paper.gif" alt="Magic Paper">
+                            <div>
+                                <h3>Magic Paper</h3>
+                                <p>Открывается при 80 Ментальной Тьмы. Нет обычной дозы — любое потребление дает усиленные
+                                    эффекты.</p>
+                                <details>
+                                    <summary>Эффекты приема</summary>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Стресс</th>
+                                                <th>Тьма</th>
+                                                <th>Влияние</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Любая Тьма</td>
+                                                <td>-18 / +8</td>
+                                                <td>+1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </details>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </main>
+        </div>
+
+        <div class="top-layer">
+            <img src="./imgs/ame_top.png" alt="Top part">
+        </div>
+
+        <div class="bottom-layer">
+            <img src="./imgs/ame_bottom.png" alt="Bottom part">
+        </div>
+    </div>
+
+    <script>
+        let scrollAmount = 0;
+        const maxScroll = 1000;
+        let progressBarsAnimated = false;
+        let justReachedMax = false;
+        let scrollLockTimeout = null;
+
+        function animateProgressBars() {
+            if (progressBarsAnimated) return;
+            progressBarsAnimated = true;
+
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach((bar) => {
+                const fill = bar.querySelector('.progress-fill');
+                const targetValue = parseInt(bar.dataset.value);
+                const maxValue = parseInt(bar.dataset.max);
+                const percentage = (targetValue / maxValue) * 100;
+
+                setTimeout(() => {
+                    fill.style.width = `${percentage}%`;
+                }, 100);
+            });
+        }
+
+        document.addEventListener('wheel', (e) => {
+            const wasFullyExpanded = scrollAmount >= maxScroll;
+            const isFullyExpanded = scrollAmount >= maxScroll;
+
+            if (isFullyExpanded && !justReachedMax) {
+                const contentArea = document.querySelector('.content-container .content');
+                const isOverContent = contentArea && contentArea.contains(e.target);
+
+                if (isOverContent) {
+                    return;
+                }
+            }
+
+            e.preventDefault();
+
+            scrollAmount += e.deltaY;
+            scrollAmount = Math.max(0, Math.min(maxScroll, scrollAmount));
+
+            if (!wasFullyExpanded && scrollAmount >= maxScroll) {
+                justReachedMax = true;
+                if (scrollLockTimeout) clearTimeout(scrollLockTimeout);
+                scrollLockTimeout = setTimeout(() => {
+                    justReachedMax = false;
+                }, 800);
+            }
+
+            const topLayer = document.querySelector('.top-layer');
+            const bottomLayer = document.querySelector('.bottom-layer');
+            const contentContainer = document.querySelector('.content-container');
+            const darkOverlay = document.querySelector('.dark-overlay');
+
+            const progress = scrollAmount / maxScroll;
+            const topOffset = progress * 45;
+            const bottomOffset = progress * 55;
+
+            topLayer.style.transform = `translateY(-${topOffset}vh)`;
+            bottomLayer.style.transform = `translateY(${bottomOffset}vh)`;
+
+            const overlayOpacity = scrollAmount / maxScroll;
+            const contentOpacity = Math.max(0, (scrollAmount - maxScroll * 0.4) / (maxScroll * 0.6));
+
+            contentContainer.style.opacity = contentOpacity;
+            darkOverlay.style.opacity = overlayOpacity;
+
+            if (contentOpacity >= 0.95) {
+                animateProgressBars();
+            }
+
+            document.body.style.height = `${100 + scrollAmount}vh`;
+        }, { passive: false });
+
+        document.querySelectorAll('.staff-item').forEach(item => {
+            const img = item.querySelector('img');
+            const staffName = item.dataset.staff;
+            const normalSrc = `./imgs/staff/${staffName}.gif`;
+            const animSrc = `./imgs/staff/${staffName} anim.gif`;
+
+            item.addEventListener('mouseenter', () => {
+                img.src = animSrc;
+            });
+
+            item.addEventListener('mouseleave', () => {
+                img.src = normalSrc;
+            });
+        });
+
+        const contentArea = document.querySelector('.content-container .content');
+        if (contentArea) {
+            contentArea.addEventListener('click', () => {
+                justReachedMax = false;
+                if (scrollLockTimeout) {
+                    clearTimeout(scrollLockTimeout);
+                    scrollLockTimeout = null;
+                }
+            });
+        }
+    </script>
 </body>
 </html>

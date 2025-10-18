@@ -1,6 +1,323 @@
-body {
+:root {
+    --color-primary: #FFDEF1;
+    --color-primary-alpha-05: rgba(255, 222, 241, 0.05);
+    --color-primary-alpha-10: rgba(255, 222, 241, 0.1);
+    --color-primary-alpha-20: rgba(255, 222, 241, 0.2);
+    --color-primary-alpha-30: rgba(255, 222, 241, 0.3);
+    --color-primary-alpha-60: rgba(255, 222, 241, 0.6);
+    --color-gradient-start: #FF69B4;
+    --color-accent: rgba(255, 105, 180, 0.3);
+    --color-dark: #221E2C;
+    --font-heading: 'Tiny5', sans-serif;
+    --font-body: 'Roboto Mono', monospace;
+    --transition-fast: 0.1s ease-out;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 1.5s ease-out;
+    --content-max-width: 1600px;
+    --image-wrapper-width: 500px;
+    --progress-bar-max-width: 300px;
+    --staff-img-height: 120px;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    cursor: url('./imgs/cat-small.png') 32 32, auto;
+}
 
-    background: #292929;
+body {
+    overflow: hidden visible;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.scroll-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: visible hidden;
+}
+
+.background-layer,
+.dark-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-layer {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dark-overlay {
+    background-color: var(--color-dark);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.content-container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    overflow: visible;
+}
+
+.content-container main {
+    display: flex;
+    gap: 3rem;
+    max-width: var(--content-max-width);
+    width: 90%;
+    padding: 3rem;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    overflow: visible;
+    align-items: center;
+}
+
+.content-container figure {
+    flex-shrink: 0;
+    text-align: center;
+    align-self: center;
+    margin-top: -15vh;
+}
+
+.content-container .image-wrapper {
+    position: relative;
+    width: var(--image-wrapper-width);
+    display: inline-block;
+}
+
+.content-container .image-wrapper img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.content-container .image-wrapper .hover-image {
+    position: absolute;
+    inset: 0 0 9% 0;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+    pointer-events: none;
+}
+
+.content-container .image-wrapper:hover .hover-image {
+    opacity: 1;
+}
+
+.content-container figcaption {
+    margin-top: 1rem;
+    color: var(--color-primary);
+}
+
+.content-container .content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 85vh;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    align-self: flex-end;
+    margin: 5vh 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.content-container .content::-webkit-scrollbar {
+    display: none;
+}
+
+.content-container h1,
+.content-container h3 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+}
+
+.content-container h3 {
+    margin: 0 0 0.5rem;
+}
+
+.content-container p {
+    line-height: 1.6;
+    color: var(--color-primary);
+}
+
+.content-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-container section {
+    margin-bottom: 3rem;
+}
+
+.content-container section:last-child {
+    margin-bottom: 0;
+}
+
+.content-container li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.content-container li span {
+    min-width: 150px;
+}
+
+.progress-bar {
+    flex: 1;
+    max-width: var(--progress-bar-max-width);
+    height: 20px;
+    background: var(--color-primary-alpha-20);
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    overflow: visible;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-gradient-start), var(--color-primary));
+    width: 0%;
+    transition: width var(--transition-slow);
+    position: relative;
+    z-index: 10;
+}
+
+.content-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.content-container table td,
+.content-container table th {
+    padding: 0.5rem;
+    border: 1px solid var(--color-primary);
+}
+
+.content-container table th {
+    background: var(--color-primary-alpha-10);
+    font-weight: bold;
+}
+
+.content-container table caption {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.content-container blockquote,
+.content-container mark,
+.content-container abbr {
+    color: var(--color-primary);
+}
+
+.content-container mark {
+    background: var(--color-accent);
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+}
+
+.content-container abbr {
+    text-decoration: underline dotted;
+}
+
+.content-container article {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 1px solid var(--color-primary-alpha-30);
+    border-radius: 4px;
+    transition: border-color var(--transition-medium), background var(--transition-medium);
+}
+
+.content-container article:hover {
+    border-color: var(--color-primary-alpha-60);
+    background: var(--color-primary-alpha-05);
+}
+
+.content-container article img {
+    flex-shrink: 0;
+    height: var(--staff-img-height);
+    width: auto;
+}
+
+.content-container details {
+    margin-top: 0.5rem;
+}
+
+.content-container summary {
+    color: var(--color-primary);
+    padding: 0.5rem;
+    background: var(--color-primary-alpha-10);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.content-container summary:hover {
+    background: var(--color-primary-alpha-20);
+}
+
+.top-layer,
+.bottom-layer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    overflow: hidden;
+    transition: transform var(--transition-fast);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.top-layer {
+    top: 0;
+    height: 45vh;
+}
+
+.bottom-layer {
+    bottom: 0;
+    height: 55vh;
+}
+
+.top-layer img,
+.bottom-layer img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.top-layer img {
+    object-position: center bottom;
+}
+
+.bottom-layer img {
+    object-position: center top;
 }

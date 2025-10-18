@@ -1,1 +1,1 @@
-export const REPO_NAME = '/hw2'
+export const REPO_NAME = '/html-hw2-uiqkos'
